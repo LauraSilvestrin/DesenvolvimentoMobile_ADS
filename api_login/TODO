@@ -1,0 +1,37 @@
+API de Cadastro e Login
+
+Requisitos obrigatórios:
+
+Criar uma rota POST /cadastro que receba no corpo da requisição (JSON) os campos:
+
+{
+  "nome": "",
+  "usuario": "",
+  "senha": ""
+}
+
+Essa rota deve armazenar o usuário em uma lista (array em memória).
+
+Retornar a mensagem:
+
+{ "msg": "Usuário cadastrado com sucesso!" }
+
+
+Criar uma rota POST /login que receba no corpo da requisição (JSON) os campos:
+
+{
+  "usuario": "",
+  "senha": ""
+}
+
+
+Essa rota deve verificar se o usuário e senha informados existem e conferem com os dados cadastrados.
+
+Se estiver correto, retornar:
+
+{ "msg": "Login realizado com sucesso!" }
+
+
+Caso contrário, retornar:
+
+{ "msg": "Usuário ou senha inválidos!" }
