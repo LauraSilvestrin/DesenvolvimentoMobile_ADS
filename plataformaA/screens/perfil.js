@@ -1,3 +1,4 @@
+import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
@@ -17,13 +18,25 @@ export default function Perfil() {
             <View style={styles.conteudo}>
                 <Text style={styles.titulo}>Portal do Aluno</Text>
 
+                {/* Card Disciplinas Ativas */}
                 <TouchableOpacity 
                     style={styles.card} 
                     onPress={() => navigation.navigate("disciplinas")}
                 >
                     <Ionicons name='book-outline' size={32} color={'#000000'} />
-                    <View>
+                    <View style={{ marginLeft: 12 }}>
                         <Text style={styles.tituloCard}>Disciplinas Ativas</Text>
+                    </View>
+                </TouchableOpacity>
+
+                {/* NOVO CARD — Grade Unificada */}
+                <TouchableOpacity 
+                    style={styles.card} 
+                    onPress={() => navigation.navigate("notasFaltasUnificadas")}
+                >
+                    <Ionicons name='grid-outline' size={32} color={'#000000'} />
+                    <View style={{ marginLeft: 12 }}>
+                        <Text style={styles.tituloCard}>Grade Unificada</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -74,8 +87,7 @@ const styles = StyleSheet.create({
     tituloCard: {
         color: '#303030',
         fontSize: 18,
-        fontWeight: 'bold',
-        marginLeft: 10
+        fontWeight: 'bold'
     },
     card: {
         backgroundColor: '#ffffff',
@@ -84,6 +96,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 15,
         marginBottom: 15,
-        flex: 0.48
     }
 });
